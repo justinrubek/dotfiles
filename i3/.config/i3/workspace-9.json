@@ -1,0 +1,21 @@
+{
+    "layout": "splith",
+    "percent": 0.7,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "name": "Steam",
+            "percent": 0.65,
+            "swallows": [
+                {
+                    "class": "^Steam$",
+                    "instance": "^Steam$",
+                    "title": "^Steam$",
+                    "transient_for": "^$"
+                }
+            ],
+            "type": "con"
+        }
+    ]
+}

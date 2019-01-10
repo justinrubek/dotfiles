@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/justin/projects/scheduler/server/src/api/office'
+let g:netrw_dirhist_2='/home/justin/projects/scheduler/static/src/components'
+let g:netrw_dirhist_3='/home/justin/drivers'
+let g:netrw_dirhist_4='/home/justin/acad/f18/cmsc405/hw_3'
+let g:netrw_dirhist_5='/home/justin/acad/f18/cmsc420/prolog'
+let g:netrw_dirhist_6='/home/justin/.vnc'

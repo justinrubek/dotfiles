@@ -1,0 +1,218 @@
+[colors]
+i3background = ${xrdb:foreground:#ffff00}
+i3selection = ${xrdb:color2:#ff00ff}
+i3visible = ${xrdb:red:#ffff00}
+i3urgent = ${xrdb:red:#ffff00}
+i3focusedtext = ${xrdb:background:#181818}
+i3unfocusedtext = ${xrdb:background:#181818}
+foreground = ${xrdb:foreground:#BDBDBD}
+background = ${xrdb:background:#181818}
+barbackground = ${xrdb:background:#000000}
+red = ${xrdb:red:#ff0000}
+color6 = ${xrdb:color6:#ff00ff}
+
+[global/wm]
+margin-top = 10
+margin-bottom = 10
+
+[bar/top]
+width = 100%
+height = 34
+offset-y = 2
+fixed-center = false
+
+background = ${colors.barbackground} 
+foreground = #ccffffff
+
+line-color = ${bar/bottom.background}
+line-size = 16
+
+spacing = 2
+module-margin = 4
+
+font-0 = "Inconsolata Nerd Font Mono:size=12"
+font-1 = "NotoEmoji Nerd Font:size=12;3"
+font-2 = "DejaVu Sans:size=12;0"
+font-3 = "Twitter Color Emoji:size=12;0"
+font-4 = "Noto Sans Canadian Aboriginal:size=14;3"
+
+
+modules-left = volume
+modules-right = wired-network time
+
+[bar/bottom]
+bottom = true
+width = 100%
+height = 27
+
+background = ${bar/top.background}
+foreground = ${bar/top.foreground}
+
+line-color = ${bar/top.background}
+line-size = 2
+
+spacing = 3
+padding-right = 4
+module-margin-left = 0
+module-margin-right = 6
+
+font-0 = "Inconsolata Nerd Font Mono:size=12"
+font-1 = "NotoEmoji Nerd Font:size=12;3"
+font-2 = "DejaVu Sans:size=12;0"
+font-3 = "Twitter Color Emoji:size=12;0"
+font-4 = "Noto Sans Canadian Aboriginal:size=14;3"
+
+modules-left = i3
+modules-center = cpu memory 
+modules-right = powermenu
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-background = ${colors.background}
+
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/time]
+type = internal/date
+interval = 1.0
+format-padding = 1
+label = %date% %time%
+label-foreground = ${colors.foreground}
+date = %Y-%m-%d%
+date-alt = %A, %d %B %Y
+time = %H:%M:%S%
+time-alt = %H:%M:%S%
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM %gb_used%/%gb_free%
+
+bar-used-width = 16
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+[module/wired-network]
+type = internal/network
+interface = enp0s31f6
+interval = 32
+
+label-connected = %local_ip%
+label-disconnected-foreground = #66
+
+[module/volume]
+type = internal/pulseaudio
+format-volume-padding = 1
+format-volume = <ramp-volume> <label-volume>%
+
+label-volume = %percentage%
+label-muted = 🔇 
+label-muted-padding = 1
+label-muted-foreground = ${colors.red}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+
+[module/powermenu]
+type = custom/menu
+expand-right = false
+label-separator = |
+
+
+label-open = ⏻
+label-close = ⏻
+
+menu-0-0 = "Log out " 
+menu-0-0-foreground = ${colors.color6}
+menu-0-0-exec = i3-msg exit
+menu-0-1 = Reboot
+menu-0-1-foreground = ${colors.color6} 
+menu-0-1-exec = systemctl reboot
+menu-0-2 = Power off
+menu-0-2-foreground = ${colors.color6}
+menu-0-2-exec = systemctl shutdown
+
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+label-focused = %index%
+label-focused-padding = 2
+label-focused-background = ${colors.i3selection}
+label-focused-foreground = ${colors.i3focusedtext}
+label-unfocused = %index%
+label-unfocused-background = ${colors.i3background}
+label-unfocused-foreground = ${colors.i3unfocusedtext}
+label-unfocused-padding = 2
+label-visible = %index%
+label-visible-padding = 2
+label-visibile-background = ${colors.i3visible}
+label-urgent = %index%
+label-urgent-padding = 2
+label-urgent-background = ${colors.i3urgent}
+index-sort = true
+
+icon-font = 5
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;[
+
+format-font = 4
+format = <label-state>
+
+
+; vim:ft=dosini
