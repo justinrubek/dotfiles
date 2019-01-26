@@ -1,0 +1,5 @@
+URxvt.font: xft:mononoki Nerd Font Mono:size=9:antialias=true
+URxvt.scrollBar: false
+
+Xcursor.theme: capitaine-cursors
+
