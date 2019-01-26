@@ -174,7 +174,7 @@ menu-0-1-foreground = ${colors.color6}
 menu-0-1-exec = systemctl reboot
 menu-0-2 = Power off
 menu-0-2-foreground = ${colors.color6}
-menu-0-2-exec = systemctl shutdown
+menu-0-2-exec = systemctl poweroff
 
 
 [module/filesystem]
