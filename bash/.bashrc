@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Profile
+source ~/.profile
+
 # Apply theme color to new terminals
 (cat ~/.cache/wal/sequences &)
 
@@ -20,9 +23,6 @@ alias ls='ls --color=auto'
 # Put all alias definitions in bash_aliases
 source ~/.bash_aliases
 
-# CD Path for acad
-export CDPATH=".:/home/justin/acad:/home/justin/acad/f18:/home/justin/projects"
-
 # Specify editor
 export VISUAL=vim
 export EDITOR=vim
@@ -33,13 +33,6 @@ bind 'TAB:menu-complete'
 
 export GPG_TTY=$(tty)
 
-# Cargo bin
-PATH="$HOME/.cargo/bin:$PATH"
-
-# NPM
-NPM_PACKAGES="${HOME}/.npm-packages"
-RUBY="${HOME}/.gem/ruby/2.5.0/bin"
-PATH="$RUBY:$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
@@ -57,8 +50,3 @@ man() {
   LESS_TERMCAP_us=$'\e[01;32m' \
   command man "$@"
 }
-
-coco() {
-  java -jar /home/justin/acad/f18/cmsc420/jcoco/JCoCo/dist/JCoCoStudent.jar $*
-}
-
