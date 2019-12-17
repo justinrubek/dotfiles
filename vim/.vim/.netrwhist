@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/justin/ebuilds/pywal'
+let g:netrw_dirhist_2='/home/justin/acad/f19/cmsc432/hw_2'
+let g:netrw_dirhist_3='/home/justin/projects/entrepnr/demo/server/src'
+let g:netrw_dirhist_4='/home/justin/acad/f19/proposal/yewplayground/src'
+let g:netrw_dirhist_5='/usr/portage/media-sound/teamspeak-client'

@@ -34,16 +34,18 @@ set backspace=2
 set autoindent
 set cindent
 
-" Set tabs to 2 spaces
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set smarttab
 
 " Wrap on words
 set wrap
 set formatoptions=l
 set lbr
+
+" Disable continuation of comments
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 "set ruler
 set number

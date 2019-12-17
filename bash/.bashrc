@@ -3,14 +3,14 @@
 #
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+if [[ $- != *i* ]]; then
+	return
+fi
 
 # Profile
-source ~/.profile
-
-# Apply theme color to new terminals
-(cat ~/.cache/wal/sequences &)
-
+if [ -f ~/.profile ]; then
+  source ~/.profile
+fi
 
 #if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 #  export TERM='xterm-256color'

@@ -1,2 +1,3 @@
-URxvt.font: xft:mononoki Nerd Font Mono:size=9:antialias=true
 URxvt.scrollBar: false
+URxvt.font: xft:mononoki Nerd Font Mono:size=9:antialias=true
+URxvt.letterSpace: -1
