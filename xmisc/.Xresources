@@ -1,0 +1,11 @@
+urxvt*background: Black
+urxvt*foreground: White
+urxvt*cursorUnderline: 1
+urxvt*cursorBlink: true
+urxvt*scrollBar: false
+urxvt.font: xft:mononoki Nerd Font Mono:size=13:antialias=true
+urxvt.letterSpace: -1
+
+urxvt*url-launcher: /usr/bin/firefox
+
+Xcursor.theme: posy-black

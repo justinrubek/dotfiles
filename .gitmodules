@@ -1,0 +1,3 @@
+[submodule "dploy"]
+	path = dploy
+	url = https://github.com/arecarn/dploy.git
