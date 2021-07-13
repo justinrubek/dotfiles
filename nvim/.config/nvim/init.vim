@@ -7,7 +7,12 @@ Plug 'tjdevries/lsp_extensions.nvim'
 Plug 'nvim-lua/completion-nvim'
 " Wal theme loading
 Plug 'dylanaraps/wal.vim'
+" Better substitution
+Plug 'tpope/vim-abolish'
 call plug#end()
+
+let mapleader = "\<Space>"
+
 
 " Use system colorscheme provided by wal
 colorscheme wal
@@ -184,6 +189,7 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 "set ruler
 set number
+set relativenumber
 
 " Indentation
 
@@ -245,3 +251,13 @@ set pastetoggle=<F1>
 " Show a list of open files and allow easy navigation
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
+" Copy to clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>u "+y
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
