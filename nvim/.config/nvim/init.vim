@@ -245,6 +245,39 @@ function SetRustOptions()
   set fileformat=unix
 endfunction
 
+autocmd BufNewFile,BufRead *.js,*.jsx,*.tsx call SetJavascriptOptions()
+function SetJavascriptOptions()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set textwidth=79
+  set expandtab
+  set autoindent
+  set fileformat=unix
+endfunction
+
+autocmd BufNewFile,BufRead *.pkr.hcl call SetPackerOptions()
+function SetPackerOptions()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set textwidth=79
+  set expandtab
+  set autoindent
+  set fileformat=unix
+endfunction
+
+autocmd BufNewFile,BufRead *.tf call SetTerraformOptions()
+function SetTerraformOptions()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set textwidth=79
+  set expandtab
+  set autoindent
+  set fileformat=unix
+endfunction
+
 " Only copy text not line number
 set pastetoggle=<F1>
 
